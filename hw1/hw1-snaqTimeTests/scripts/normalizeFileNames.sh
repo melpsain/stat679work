@@ -1,4 +1,4 @@
-#HMWK 1 Trial
+#Homework1 script that normalizes files by pading files 1-9 with a 0
 
 for y in {1..9}
 do
