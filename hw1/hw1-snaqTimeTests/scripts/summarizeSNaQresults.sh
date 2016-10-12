@@ -26,7 +26,7 @@ do
   hmax=$(grep "hmax" $filename | head -n 1 | grep -P -o "\d")
   # the line above produces only the hmax value for each file in .log
   echo this is hmax: $hmax
-  CPUtime=$(grep -P "Elapsed time. \d+\.\d+" -o out/$analysis.out  | grep -P -o "\d+\.\d")
+  CPUtime=$(grep -P "Elapsed time. \d+\.\d+" -o out/$analysis.out  | grep -P -o "\d+\.\d+")
   # the above line produces the time taken to run each analysis
   echo this is CPUtime: $CPUtime
   Nruns=$(sed -n '7p' $filename | cut -f2 -d " ")
