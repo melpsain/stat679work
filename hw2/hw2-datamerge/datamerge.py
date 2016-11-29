@@ -64,10 +64,14 @@ def solarenergy_temp(t, e):
                 tempData[index-1].append(float(i[1])/1000)
                 #print(tempData)
 
+    for row in tempData:
+        for item in row:
+            OutFile.write(str(item))
+            # still missing: write commas to delimit columns
+            # on lines that have no energy value: one comma after each item: OutFile.write(",")
+            # on lines that have an energy value: one comma after each item except after the last.
+        OutFile.write('\n')
 
-
-            OutFile.write(tempData+'\n')
-
-#temp.close()
-#energy.close()
+solarenergy_temp(args.t, args.e)
 OutFile.close()
+
